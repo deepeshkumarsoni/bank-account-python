@@ -1,20 +1,20 @@
 import unittest
-import account
+from account import Account
+account=Account()
 
-class testaccount(unittest.TestCase):
-    def Get_Balance(self):
-        """
-        I can get balance from my account
-        """
-        # Arrangement
-        #account = getattr Account()
+class Test_account(unittest.TestCase):
 
-        # Action
-        balance = Account.getBalance()
+    def test_Balance(self):      
 
-        # Assert
-        self.assertEqual(balance, 0)
+        self.assertEqual(account.getBalance(), 0)
 
+    def test_Deposite(self):
+        self.assertEquals(account.getdeposite(100),100)
+    
+    def test_withdraw(self): 
+        self.assertEquals(account.getdeposite(100),100)
+        self.assertEquals(account.getwithdraw(10),90)
+        
 
 if __name__ == '__main__':
     unittest.main()
